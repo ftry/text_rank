@@ -23,6 +23,7 @@ def get_news_info():
 
 #########################################################################
 
+# 文本关键字提取 需要借助于jieba分词
 def text_rank(content_str):
     tr4w = TextRank4Keyword()
 
@@ -33,6 +34,7 @@ def text_rank(content_str):
         print(item.word, item.weight)
 
 
+# 文本摘要提取
 def text_abstract(content_str):
     tr4s = TextRank4Sentence()
     tr4s.analyze(text=content_str, lower=True, source='all_filters')
